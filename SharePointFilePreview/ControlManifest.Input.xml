@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://schemas.microsoft.com/PowerApps/2020/2/ComponentFramework/Manifest">
+  <control namespace="SharePointView" 
+           constructor="SharePointFilePreview" 
+           version="1.0.0" 
+           display-name-key="SharePointFilePreview_DisplayName" 
+           description-key="SharePointFilePreview_Description" 
+           control-type="standard">
+    
+    <!-- Property Definitions -->
+    <property name="recordId" 
+              display-name-key="RecordId_Display_Key" 
+              description-key="RecordId_Description_Key" 
+              of-type="SingleLine.Text" 
+              usage="bound" 
+              required="true" />
+    <property name="filePreviewType" 
+              display-name-key="FilePreviewType_Display_Key" 
+              description-key="FilePreviewType_Desc_Key" 
+              of-type="Enum" 
+              usage="input" 
+              required="true">
+      <value name="Document" 
+             display-name-key="Document_Display_Key" 
+             description-key="Document_Desc_Key" 
+             default="true">document</value>
+      <value name="Image" 
+             display-name-key="Image_Display_Key" 
+             description-key="Image_Desc_Key">image</value>
+      <value name="Video" 
+             display-name-key="Video_Display_Key" 
+             description-key="Video_Desc_Key">video</value>
+    </property>
+
+    <!-- Resources -->
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/SharePointFilePreview.css" order="1" />
+      <img path="preview.png" />
+      <resx path="strings/SharePointFilePreview.1033.resx" version="1.0.0" />
+      <resx path="strings/SharePointFilePreview.3082.resx" version="1.0.0" />
+    </resources>
+  </control>
+</manifest>
